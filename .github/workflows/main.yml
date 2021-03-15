@@ -15,7 +15,7 @@ jobs:
         run: ./gradlew test
         continue-on-error: true
       - name: Install yq
-        run: sudo apt-get install yq
+        run: snap install yq
       - id: set_vars
         name: Set vars
         run: |
