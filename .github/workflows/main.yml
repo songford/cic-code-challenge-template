@@ -5,12 +5,24 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 1.8
+      - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
-      - name: Build with Gradle
-        run: ./gradlew build
+          java-version: 11
+      - name: Run tests
+        run: ./gradlew test
+        continue-on-error: true
+      - name: Set vars
+        run: content=$(cat ./submission.yaml)
+      - name: Send notification
+        if: ${{ echo $content | yq e '.Ready' - }} == true
+        uses: aliencube/microsoft-teams-actions@v0.8.0
+        with:
+          webhook_uri: https://sap.webhook.office.com/webhookb2/172cfd75-3336-48bc-b622-48ab804f2961@42f7676c-f455-423c-82f6-dc2d99791af7/IncomingWebhook/db13e2cce44e4d2e91ef2afec695a4e1/e7ec9901-1a5f-4281-bd80-3596fe012516
+          title: A candidate has submitted his solution
+          summary: ${{ echo $content | yq e '.Name' - }} 
+          text: |
+            Repository Owner: ${{ github.repository_owner }}
+            Repository: ${{ github.repository }}
