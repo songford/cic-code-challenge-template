@@ -1,0 +1,10 @@
+language: java
+
+dist: focal
+
+matrix:
+  include:
+    - stage: test
+      name: Verify the result of the submission
+      script:
+        - gradle build
