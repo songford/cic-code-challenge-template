@@ -7,4 +7,4 @@ matrix:
     - stage: test
       name: Verify the result of the submission
       script:
-        - gradle build
+        - gradle test
