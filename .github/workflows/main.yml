@@ -15,14 +15,18 @@ jobs:
         run: ./gradlew test
         continue-on-error: true
       - name: Set vars
-        run: content=$(cat ./submission.yaml)
+        run: |
+          ready=$(cat ./submission.yaml | yq e '.Ready' -)
+          name=$(cat ./submission.yaml | yq e '.Name' -)
+          echo "::set-output name=ready::$ready"
+          echo "::set-output name=name::$name"
       - name: Send notification
-        if: ${{ echo $content | yq e '.Ready' - }} == true
+        if: ${{ ready }} == true
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
           webhook_uri: https://sap.webhook.office.com/webhookb2/172cfd75-3336-48bc-b622-48ab804f2961@42f7676c-f455-423c-82f6-dc2d99791af7/IncomingWebhook/db13e2cce44e4d2e91ef2afec695a4e1/e7ec9901-1a5f-4281-bd80-3596fe012516
           title: A candidate has submitted his solution
-          summary: ${{ echo $content | yq e '.Name' - }} 
+          summary: ${{ name }} 
           text: |
             Repository Owner: ${{ github.repository_owner }}
             Repository: ${{ github.repository }}
