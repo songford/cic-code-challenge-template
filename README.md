@@ -1,8 +1,5 @@
 # Code Challenge
 
-| Candidate Name | Time Spent | Successful Tests | Ready For Submission |
-| -------------- | ---------- | ---------------- | -------------------- |
-|*CHANGE_ME*|*CHANGE_ME*|*CHANGE_ME*|*CHANGE_ME*|
 ----
 
 ## Introduction
@@ -57,10 +54,24 @@ There is also a `GameTest` in the test folder provided for you, and hopefully it
 
 > ⚠️ **Please refrain from tempering with `GameTest` as changing it will disqualify you from being considered for this position!**
 
+After you are satisfied with what you have, change the content of `submission.yaml`:
+```yaml
+Ready: false
+Name: 
+```
+to
+```yaml
+Ready: true
+Name: ${YOUR_NAME_HERE_PLEASE}
+```
+> ⚠️ Also please add `songford@me.com` as collabator. 
+
 ## Caveats
 
-1. Please aim to finish this test within a day. We will take the time you spend doing this test into consideration towards into if you will progress into next stages.
-2. You should click that green `Use this template` at the top right portion of the page. Fork this repository under your own GitHub profile, and start from there.
+1. Please aim to finish this test within a day. We will take the time you spend doing this test into consideration towards if you will progress into next stages.
+2. If you aren't able to pass all tests in the time window, aim to pass as many as possible. 
+3. We will review your solution. Submit meaningful and generic solutions, not solutions solely for passing all tests.  
+4. You should click that green `Use this template` at the top right portion of the page. Fork this repository under your own GitHub profile, and start from there.
 > :warning: **Make sure that the repository you fork is **PRIVATE**.**
-3. Don't forget to fill in the table at the top of this page. Change all *CHANGE_ME* anchors accordingly. 
-4. Have fun!
+5. Don't forget to fill in the table at the top of this page. Change all *CHANGE_ME* anchors accordingly. 
+6. Have fun!
