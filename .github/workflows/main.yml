@@ -24,7 +24,7 @@ jobs:
           echo "::set-output name=ready::$ready"
           echo "::set-output name=name::$name"
       - name: Send notification
-        if: ${{ steps.set_vars.outputs.ready }} == 'true'
+        if: ${{ steps.set_vars.outputs.ready == 'true' }}
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
           webhook_uri: https://sap.webhook.office.com/webhookb2/172cfd75-3336-48bc-b622-48ab804f2961@42f7676c-f455-423c-82f6-dc2d99791af7/IncomingWebhook/db13e2cce44e4d2e91ef2afec695a4e1/e7ec9901-1a5f-4281-bd80-3596fe012516
