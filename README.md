@@ -1,8 +1,8 @@
 # Code Challenge
 
-| Candidate Name | Time Spent | Successful Tests |
-| -------------- | ---------- | ---------------- |
-|||
+| Candidate Name | Time Spent | Successful Tests | Ready For Submission |
+| -------------- | ---------- | ---------------- | -------------------- |
+|*CHANGE_ME*|*CHANGE_ME*|*CHANGE_ME*|*CHANGE_ME*|
 ----
 
 ## Introduction
