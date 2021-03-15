@@ -62,5 +62,5 @@ There is also a `GameTest` in the test folder provided for you, and hopefully it
 1. Please aim to finish this test within a day. We will take the time you spend doing this test into consideration towards into if you will progress into next stages.
 2. You should click that green `Use this template` at the top right portion of the page. Fork this repository under your own GitHub profile, and start from there.
 > :warning: **Make sure that the repository you fork is **PRIVATE**.**
-3. Don't forget to fill in the table at the top of this page. 
+3. Don't forget to fill in the table at the top of this page. Change all *CHANGE_ME* anchors accordingly. 
 4. Have fun!
