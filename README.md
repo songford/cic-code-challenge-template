@@ -72,6 +72,5 @@ Name: ${YOUR_NAME_HERE_PLEASE}
 2. If you aren't able to pass all tests in the time window, aim to pass as many as possible. 
 3. We will review your solution. Submit meaningful and generic solutions, not solutions solely for passing all tests.  
 4. You should click that green `Use this template` at the top right portion of the page. Fork this repository under your own GitHub profile, and start from there.
-> :warning: **Make sure that the repository you fork is **PRIVATE**.**
-5. Don't forget to fill in the table at the top of this page. Change all *CHANGE_ME* anchors accordingly. 
-6. Have fun!
+> :warning: **Make sure that the repository you fork is **PRIVATE**.** 
+5. Have fun!
