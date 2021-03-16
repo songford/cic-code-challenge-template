@@ -17,7 +17,7 @@ is a very popular card game across the world. If you haven't learnt to play it, 
 
 Make a **Hand Judge**!
 
-If you have read the rule of Texas Hold'em (**please do**), you will understand that the winnder in a round of Texas Hold'em is determined by the **hands**. In essence, a hand is the five cards a player has at the end of each round, which consist of two cards on hand and three out of the five community cards. The player will opt for the largest card that will make five cards the **largest** in terms of the value of his **hand**. For instance,
+If you have read the rule of Texas Hold'em (**please do**), you will understand that the winner in a round of Texas Hold'em is determined by the **hands**. In essence, a hand is the five cards a player has at the end of each round, which consist of two cards on hand and three out of the five community cards. The player will opt for the largest card that will make five cards the **largest** in terms of the value of his **hand**. For instance,
 
 ![image](https://user-images.githubusercontent.com/7297840/111101545-1be3f180-8585-11eb-8faa-ae12e1b1d28b.png)
 
