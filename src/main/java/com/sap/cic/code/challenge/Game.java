@@ -23,7 +23,7 @@ public class Game {
     }
 
     //EDIT ME PLEASE!
-    public Hand showHand() {
+    public Hand showHand() throws GameException {
         return Hand.UNKNOWN;
     }
 }

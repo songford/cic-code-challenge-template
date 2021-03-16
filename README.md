@@ -68,9 +68,9 @@ Name: ${YOUR_NAME_HERE_PLEASE}
 
 ## Caveats
 
-1. Please aim to finish this test within a day. We will take the time you spend doing this test into consideration towards if you will progress into next stages.
-2. If you aren't able to pass all tests in the time window, aim to pass as many as possible. 
-3. We will review your solution. Submit meaningful and generic solutions, not solutions solely for passing all tests.  
+1. Submission with failed test cases is ignored. Exceeding time limit without successful submission means failure.
+2. Submission with all tests passed will be reviewed, cheating would cause disqualification.
+3. Faster and successful submission gets higher score   
 4. You should click that green `Use this template` at the top right portion of the page. Fork this repository under your own GitHub profile, and start from there.
 > :warning: **Make sure that the repository you fork is **PRIVATE**.** 
-5. Have fun!
+4. Have fun!

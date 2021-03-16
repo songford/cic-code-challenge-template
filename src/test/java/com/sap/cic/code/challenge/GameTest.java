@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GameTest {
 
     @Test
-    void test1() {
+    void test1() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.TEN, Card.Suit.CLUBS),
@@ -24,7 +24,7 @@ class GameTest {
     }
 
     @Test
-    void test2() {
+    void test2() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
@@ -38,7 +38,7 @@ class GameTest {
     }
 
     @Test
-    void test3() {
+    void test3() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
@@ -52,7 +52,7 @@ class GameTest {
     }
 
     @Test
-    void test4() {
+    void test4() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
@@ -66,7 +66,7 @@ class GameTest {
     }
 
     @Test
-    void test5() {
+    void test5() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.THREE, Card.Suit.CLUBS),
@@ -80,7 +80,7 @@ class GameTest {
     }
 
     @Test
-    void test6() {
+    void test6() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.TEN, Card.Suit.CLUBS),
@@ -94,7 +94,7 @@ class GameTest {
     }
 
     @Test
-    void test7() {
+    void test7() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.ACE, Card.Suit.CLUBS),
@@ -108,7 +108,7 @@ class GameTest {
     }
 
     @Test
-    void test8() {
+    void test8() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.ACE, Card.Suit.CLUBS),
@@ -122,7 +122,7 @@ class GameTest {
     }
 
     @Test
-    void test9() {
+    void test9() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
@@ -136,13 +136,13 @@ class GameTest {
     }
 
     @Test
-    void test10() {
+    void test10() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
                 new Card(Card.Kind.KING, Card.Suit.HEARTS),
                 new Card(Card.Kind.SEVEN, Card.Suit.DIAMONDS),
-                new Card(Card.Kind.KING, Card.Suit.SPADES),
+                new Card(Card.Kind.KING, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.KING, Card.Suit.SPADES)
         );
         game.add(cards);
@@ -150,7 +150,7 @@ class GameTest {
     }
 
     @Test
-    void test11() {
+    void test11() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.TWO, Card.Suit.CLUBS),
@@ -164,7 +164,7 @@ class GameTest {
     }
 
     @Test
-    void test12() {
+    void test12() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.TEN, Card.Suit.CLUBS),
@@ -203,4 +203,50 @@ class GameTest {
         game.add(cards);
         assertThrows(GameException.class, game::showHand);
     }
+
+    @Test
+    void test15() throws GameException {
+        Game game = Game.create();
+        List<Card> cards = Arrays.asList(
+                new Card(Card.Kind.ACE, Card.Suit.CLUBS),
+                new Card(Card.Kind.FOUR, Card.Suit.CLUBS),
+                new Card(Card.Kind.THREE, Card.Suit.CLUBS),
+                new Card(Card.Kind.TWO, Card.Suit.CLUBS),
+                new Card(Card.Kind.FIVE, Card.Suit.CLUBS)
+        );
+        game.add(cards);
+        assertEquals(Hand.STRAIGHT_FLUSH, game.showHand());
+    }
+
+    @Test
+    void test16() {
+        Game game = Game.create();
+        List<Card> cards = Arrays.asList(
+                new Card(Card.Kind.TEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.JACK, Card.Suit.CLUBS),
+                new Card(Card.Kind.KING, Card.Suit.CLUBS),
+                new Card(Card.Kind.QUEEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.KING, Card.Suit.HEARTS),
+                new Card(Card.Kind.QUEEN, Card.Suit.SPADES)
+
+        );
+        game.add(cards);
+        assertThrows(GameException.class, game::showHand);
+    }
+
+
+    @Test
+    void test17() throws GameException {
+        Game game = Game.create();
+        List<Card> cards = Arrays.asList(
+                new Card(Card.Kind.ACE, Card.Suit.CLUBS),
+                new Card(Card.Kind.TWO, Card.Suit.HEARTS),
+                new Card(Card.Kind.THREE, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.FOUR, Card.Suit.CLUBS),
+                new Card(Card.Kind.FIVE, Card.Suit.SPADES)
+        );
+        game.add(cards);
+        assertEquals(Hand.STRAIGHT, game.showHand());
+    }
+
 }
