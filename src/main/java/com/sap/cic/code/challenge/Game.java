@@ -18,10 +18,6 @@ public class Game {
         cardList.addAll(cards);
     }
 
-    public void add(Card card) {
-        cardList.add(card);
-    }
-
     //EDIT ME PLEASE!
     public Hand showHand() throws GameException {
         return Hand.UNKNOWN;
