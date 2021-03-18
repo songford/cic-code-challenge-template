@@ -17,7 +17,10 @@ class GameTest {
                 new Card(Card.Kind.FOUR, Card.Suit.HEARTS),
                 new Card(Card.Kind.SEVEN, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
-                new Card(Card.Kind.TWO, Card.Suit.SPADES)
+                new Card(Card.Kind.TWO, Card.Suit.SPADES),
+                new Card(Card.Kind.QUEEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.THREE, Card.Suit.SPADES)
+
         );
         game.add(cards);
         assertEquals(Hand.HIGHCARD, game.showHand());
@@ -27,11 +30,13 @@ class GameTest {
     void test2() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
-                new Card(Card.Kind.KING, Card.Suit.CLUBS),
                 new Card(Card.Kind.KING, Card.Suit.HEARTS),
+                new Card(Card.Kind.ACE, Card.Suit.HEARTS),
                 new Card(Card.Kind.SEVEN, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.TWO, Card.Suit.CLUBS),
-                new Card(Card.Kind.FIVE, Card.Suit.SPADES)
+                new Card(Card.Kind.FIVE, Card.Suit.SPADES),
+                new Card(Card.Kind.KING, Card.Suit.CLUBS),
+                new Card(Card.Kind.JACK, Card.Suit.SPADES)
         );
         game.add(cards);
         assertEquals(Hand.PAIR, game.showHand());
@@ -41,11 +46,14 @@ class GameTest {
     void test3() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
-                new Card(Card.Kind.KING, Card.Suit.CLUBS),
+                new Card(Card.Kind.EIGHT, Card.Suit.CLUBS),
                 new Card(Card.Kind.KING, Card.Suit.HEARTS),
-                new Card(Card.Kind.SEVEN, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.EIGHT, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.SEVEN, Card.Suit.CLUBS),
-                new Card(Card.Kind.FIVE, Card.Suit.SPADES)
+                new Card(Card.Kind.FIVE, Card.Suit.SPADES),
+                new Card(Card.Kind.SEVEN, Card.Suit.HEARTS),
+                new Card(Card.Kind.KING, Card.Suit.SPADES)
+
         );
         game.add(cards);
         assertEquals(Hand.TWO_PAIRS, game.showHand());
@@ -56,8 +64,10 @@ class GameTest {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
-                new Card(Card.Kind.KING, Card.Suit.HEARTS),
+                new Card(Card.Kind.QUEEN, Card.Suit.HEARTS),
                 new Card(Card.Kind.KING, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.SIX, Card.Suit.CLUBS),
+                new Card(Card.Kind.KING, Card.Suit.SPADES),
                 new Card(Card.Kind.SEVEN, Card.Suit.CLUBS),
                 new Card(Card.Kind.FIVE, Card.Suit.SPADES)
         );
@@ -70,9 +80,11 @@ class GameTest {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.THREE, Card.Suit.CLUBS),
-                new Card(Card.Kind.FOUR, Card.Suit.HEARTS),
+                new Card(Card.Kind.SIX, Card.Suit.HEARTS),
                 new Card(Card.Kind.FIVE, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.SIX, Card.Suit.CLUBS),
+                new Card(Card.Kind.FOUR, Card.Suit.SPADES),
+                new Card(Card.Kind.SIX, Card.Suit.SPADES),
                 new Card(Card.Kind.SEVEN, Card.Suit.SPADES)
         );
         game.add(cards);
@@ -84,10 +96,12 @@ class GameTest {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.TEN, Card.Suit.CLUBS),
-                new Card(Card.Kind.JACK, Card.Suit.HEARTS),
+                new Card(Card.Kind.TEN, Card.Suit.HEARTS),
                 new Card(Card.Kind.QUEEN, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
-                new Card(Card.Kind.ACE, Card.Suit.SPADES)
+                new Card(Card.Kind.ACE, Card.Suit.SPADES),
+                new Card(Card.Kind.JACK, Card.Suit.CLUBS),
+                new Card(Card.Kind.ACE, Card.Suit.DIAMONDS)
         );
         game.add(cards);
         assertEquals(Hand.STRAIGHT, game.showHand());
@@ -99,9 +113,11 @@ class GameTest {
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.ACE, Card.Suit.CLUBS),
                 new Card(Card.Kind.KING, Card.Suit.HEARTS),
-                new Card(Card.Kind.QUEEN, Card.Suit.DIAMONDS),
-                new Card(Card.Kind.JACK, Card.Suit.CLUBS),
-                new Card(Card.Kind.TEN, Card.Suit.SPADES)
+                new Card(Card.Kind.FOUR, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.TWO, Card.Suit.CLUBS),
+                new Card(Card.Kind.TEN, Card.Suit.SPADES),
+                new Card(Card.Kind.THREE, Card.Suit.CLUBS),
+                new Card(Card.Kind.FIVE, Card.Suit.SPADES)
         );
         game.add(cards);
         assertEquals(Hand.STRAIGHT, game.showHand());
@@ -111,11 +127,14 @@ class GameTest {
     void test8() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
-                new Card(Card.Kind.ACE, Card.Suit.CLUBS),
+                new Card(Card.Kind.ACE, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.SIX, Card.Suit.CLUBS),
                 new Card(Card.Kind.EIGHT, Card.Suit.CLUBS),
                 new Card(Card.Kind.JACK, Card.Suit.CLUBS),
-                new Card(Card.Kind.FIVE, Card.Suit.CLUBS)
+                new Card(Card.Kind.TEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.NINE, Card.Suit.CLUBS),
+                new Card(Card.Kind.FIVE, Card.Suit.HEARTS)
+
         );
         game.add(cards);
         assertEquals(Hand.FLUSH, game.showHand());
@@ -126,10 +145,13 @@ class GameTest {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
-                new Card(Card.Kind.KING, Card.Suit.HEARTS),
+                new Card(Card.Kind.TEN, Card.Suit.HEARTS),
                 new Card(Card.Kind.KING, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.SEVEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.SEVEN, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.KING, Card.Suit.HEARTS),
                 new Card(Card.Kind.SEVEN, Card.Suit.SPADES)
+
         );
         game.add(cards);
         assertEquals(Hand.FULL_HOUSE, game.showHand());
@@ -143,7 +165,10 @@ class GameTest {
                 new Card(Card.Kind.KING, Card.Suit.HEARTS),
                 new Card(Card.Kind.SEVEN, Card.Suit.DIAMONDS),
                 new Card(Card.Kind.KING, Card.Suit.DIAMONDS),
-                new Card(Card.Kind.KING, Card.Suit.SPADES)
+                new Card(Card.Kind.KING, Card.Suit.SPADES),
+                new Card(Card.Kind.SEVEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.SEVEN, Card.Suit.SPADES)
+
         );
         game.add(cards);
         assertEquals(Hand.FOUR_OF_A_KIND, game.showHand());
@@ -157,7 +182,10 @@ class GameTest {
                 new Card(Card.Kind.FOUR, Card.Suit.CLUBS),
                 new Card(Card.Kind.THREE, Card.Suit.CLUBS),
                 new Card(Card.Kind.SIX, Card.Suit.CLUBS),
-                new Card(Card.Kind.FIVE, Card.Suit.CLUBS)
+                new Card(Card.Kind.FIVE, Card.Suit.CLUBS),
+                new Card(Card.Kind.EIGHT, Card.Suit.CLUBS),
+                new Card(Card.Kind.SEVEN, Card.Suit.CLUBS)
+
         );
         game.add(cards);
         assertEquals(Hand.STRAIGHT_FLUSH, game.showHand());
@@ -171,7 +199,10 @@ class GameTest {
                 new Card(Card.Kind.JACK, Card.Suit.CLUBS),
                 new Card(Card.Kind.ACE, Card.Suit.CLUBS),
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
-                new Card(Card.Kind.QUEEN, Card.Suit.CLUBS)
+                new Card(Card.Kind.QUEEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.ACE, Card.Suit.SPADES),
+                new Card(Card.Kind.QUEEN, Card.Suit.HEARTS)
+
         );
         game.add(cards);
         assertEquals(Hand.ROYAL_FLUSH, game.showHand());
@@ -184,7 +215,10 @@ class GameTest {
                 new Card(Card.Kind.TEN, Card.Suit.CLUBS),
                 new Card(Card.Kind.JACK, Card.Suit.CLUBS),
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
-                new Card(Card.Kind.QUEEN, Card.Suit.CLUBS)
+                new Card(Card.Kind.QUEEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.KING, Card.Suit.HEARTS),
+                new Card(Card.Kind.QUEEN, Card.Suit.DIAMONDS)
+
         );
         game.add(cards);
         assertThrows(GameException.class, game::showHand);
@@ -198,21 +232,28 @@ class GameTest {
                 new Card(Card.Kind.JACK, Card.Suit.CLUBS),
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
                 new Card(Card.Kind.QUEEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.ACE, Card.Suit.CLUBS),
+                new Card(Card.Kind.QUEEN, Card.Suit.CLUBS),
                 new Card(Card.Kind.ACE, Card.Suit.CLUBS)
+
         );
         game.add(cards);
         assertThrows(GameException.class, game::showHand);
     }
 
+
     @Test
     void test15() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
-                new Card(Card.Kind.ACE, Card.Suit.CLUBS),
+                new Card(Card.Kind.TWO, Card.Suit.CLUBS),
                 new Card(Card.Kind.FOUR, Card.Suit.CLUBS),
                 new Card(Card.Kind.THREE, Card.Suit.CLUBS),
-                new Card(Card.Kind.TWO, Card.Suit.CLUBS),
-                new Card(Card.Kind.FIVE, Card.Suit.CLUBS)
+                new Card(Card.Kind.TEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.FIVE, Card.Suit.CLUBS),
+                new Card(Card.Kind.ACE, Card.Suit.CLUBS),
+                new Card(Card.Kind.SEVEN, Card.Suit.CLUBS)
+
         );
         game.add(cards);
         assertEquals(Hand.STRAIGHT_FLUSH, game.showHand());
@@ -227,26 +268,64 @@ class GameTest {
                 new Card(Card.Kind.KING, Card.Suit.CLUBS),
                 new Card(Card.Kind.QUEEN, Card.Suit.CLUBS),
                 new Card(Card.Kind.KING, Card.Suit.HEARTS),
-                new Card(Card.Kind.QUEEN, Card.Suit.SPADES)
+                new Card(Card.Kind.QUEEN, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.THREE, Card.Suit.HEARTS),
+                new Card(Card.Kind.FOUR, Card.Suit.DIAMONDS)
 
         );
         game.add(cards);
         assertThrows(GameException.class, game::showHand);
     }
 
-
     @Test
     void test17() throws GameException {
         Game game = Game.create();
         List<Card> cards = Arrays.asList(
-                new Card(Card.Kind.ACE, Card.Suit.CLUBS),
-                new Card(Card.Kind.TWO, Card.Suit.HEARTS),
-                new Card(Card.Kind.THREE, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.TWO, Card.Suit.CLUBS),
                 new Card(Card.Kind.FOUR, Card.Suit.CLUBS),
-                new Card(Card.Kind.FIVE, Card.Suit.SPADES)
+                new Card(Card.Kind.THREE, Card.Suit.CLUBS),
+                new Card(Card.Kind.SIX, Card.Suit.HEARTS),
+                new Card(Card.Kind.FIVE, Card.Suit.CLUBS),
+                new Card(Card.Kind.THREE, Card.Suit.SPADES),
+                new Card(Card.Kind.SIX, Card.Suit.CLUBS)
+
+        );
+        game.add(cards);
+        assertEquals(Hand.STRAIGHT_FLUSH, game.showHand());
+    }
+
+    @Test
+    void test18() throws GameException {
+        Game game = Game.create();
+        List<Card> cards = Arrays.asList(
+                new Card(Card.Kind.TWO, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.FOUR, Card.Suit.CLUBS),
+                new Card(Card.Kind.THREE, Card.Suit.CLUBS),
+                new Card(Card.Kind.SIX, Card.Suit.HEARTS),
+                new Card(Card.Kind.FIVE, Card.Suit.CLUBS),
+                new Card(Card.Kind.TEN, Card.Suit.SPADES),
+                new Card(Card.Kind.SIX, Card.Suit.CLUBS)
+
         );
         game.add(cards);
         assertEquals(Hand.STRAIGHT, game.showHand());
+    }
+
+    @Test
+    void test19() throws GameException {
+        Game game = Game.create();
+        List<Card> cards = Arrays.asList(
+                new Card(Card.Kind.EIGHT, Card.Suit.CLUBS),
+                new Card(Card.Kind.JACK, Card.Suit.HEARTS),
+                new Card(Card.Kind.EIGHT, Card.Suit.DIAMONDS),
+                new Card(Card.Kind.SEVEN, Card.Suit.CLUBS),
+                new Card(Card.Kind.FIVE, Card.Suit.SPADES),
+                new Card(Card.Kind.SEVEN, Card.Suit.HEARTS),
+                new Card(Card.Kind.KING, Card.Suit.SPADES)
+
+        );
+        game.add(cards);
+        assertEquals(Hand.TWO_PAIRS, game.showHand());
     }
 
 }
