@@ -1,4 +1,4 @@
-name: Java CI
+name: Submission
 
 on: [push]
 
@@ -13,7 +13,6 @@ jobs:
           java-version: 11
       - name: Run tests
         run: ./gradlew test
-        continue-on-error: true
       - name: Install yq
         run: sudo snap install yq
       - id: set_vars
