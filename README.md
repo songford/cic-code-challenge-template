@@ -38,7 +38,7 @@ List<Card> cards = Arrays.asList(
         new Card(Card.Kind.KING, Card.Suit.CLUBS),
         new Card(Card.Kind.TWO, Card.Suit.SPADES),
         new Card(Card.Kind.ACE, Card.Suit.HEARTS),
-        new Card(Card.Kind.TEN, Card.Suit.CLUBS)
+        new Card(Card.Kind.EIGHT, Card.Suit.CLUBS)
 );
 game.add(cards);
 assertEquals(Hand.HIGHCARD, game.showHand());
