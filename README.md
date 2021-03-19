@@ -50,17 +50,7 @@ There is also a `GameTest` in the test folder provided for you, and hopefully it
 
 > ⚠️ **Please refrain from tempering with `GameTest` as changing it will disqualify you from being considered for this position!**
 
-After you are satisfied with what you have, change the content of `submission.yaml`:
-```yaml
-Ready: false
-Name: 
-```
-to
-```yaml
-Ready: true
-Name: ${YOUR_NAME_HERE_PLEASE}
-```
-> ⚠️ Also please add `songford@me.com` as collabator. 
+> ⚠️ Please add `songford@me.com` as collabator. 
 
 ## Caveats
 
